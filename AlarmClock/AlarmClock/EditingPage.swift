@@ -12,16 +12,14 @@ import AVFoundation
 struct EditingPage: View {
     @EnvironmentObject var UserData: Clock
     
-    var time: Date = Date()
-    @State var selectedHour = 0
-    @State var selectedMinute = 0
+    @State var selectedHour = Calendar.current.component(.hour, from: Date())
+    @State var selectedMinute = Calendar.current.component(.minute, from: Date())
     @State var name = "闹钟"
+    @State var repeatDays = [Bool](repeating: false, count: 7)
+    
     var id: Int? = nil
     
-    @State var repeatDays = [Bool](repeating: false, count: 7)
-    @State var isEditing = false
-    @State var selectedDays = [Int]()
-    
+    @Environment(\.presentationMode) var presentation
     let hours = Array(0...23)
     let minutes = Array(0...59)
     
@@ -75,20 +73,26 @@ struct EditingPage: View {
                             .foregroundColor(.red)
                     }
                 }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button(action: {
+                            self.UserData.add(data: SingleClock(title: self.name, time: formatter.date(from: String(format: "%02d", selectedHour) + ":" + String(format: "%02d", selectedMinute))!, repeatDays: self.repeatDays))
+                            
+                            self.presentation.wrappedValue.dismiss()
+                        }) {
+                            Text("存储")
+                        }
+                        
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            self.presentation.wrappedValue.dismiss()
+                        }) {
+                            Text("取消")
+                        }
+                    }
+                }
             }
-        }
-    }
-    
-    func dayName(for index: Int) -> String {
-        switch index {
-        case 0: return "周一"
-        case 1: return "周二"
-        case 2: return "周三"
-        case 3: return "周四"
-        case 4: return "周五"
-        case 5: return "周六"
-        case 6: return "周日"
-        default: return ""
         }
     }
 }
@@ -105,7 +109,7 @@ struct RepeatDaysView: View {
                         self.repeatDays[index].toggle()
                     }) {
                         HStack {
-                            Text(self.dayName(for: index))
+                            Text(dayName(for: index))
                             Spacer()
                             if self.repeatDays[index] {
                                 Image(systemName: "checkmark")
@@ -118,19 +122,6 @@ struct RepeatDaysView: View {
             .navigationBarItems(trailing: Button("完成") {
                             self.presentationMode.wrappedValue.dismiss()
                         })
-        }
-    }
-    
-    func dayName(for index: Int) -> String {
-        switch index {
-        case 0: return "周一"
-        case 1: return "周二"
-        case 2: return "周三"
-        case 3: return "周四"
-        case 4: return "周五"
-        case 5: return "周六"
-        case 6: return "周日"
-        default: return ""
         }
     }
 }

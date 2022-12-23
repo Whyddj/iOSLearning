@@ -8,7 +8,7 @@
 import Foundation
 
 class Clock: ObservableObject {
-    var ClockList: [SingleClock]
+    @Published var ClockList: [SingleClock]
     var count: Int = 0
     
     init(){
@@ -18,20 +18,21 @@ class Clock: ObservableObject {
     init(data: [SingleClock]) {
         self.ClockList = []
         for i in data{
-            self.ClockList.append(SingleClock(title: i.title, time: i.time, id: count))
-            count += 1
+            self.ClockList.append(SingleClock(title: i.title, time: i.time, isOn: i.isOn, id: self.ClockList.count))
         }
     }
     
-    func Check(id: Int) {
-        self.ClockList[id].isOn.toggle()
+    
+    func add(data: SingleClock) {
+        self.ClockList.append(SingleClock(title: data.title, time: data.time, repeatDays: data.repeatDays, id: self.ClockList.count))
     }
 }
 
 struct SingleClock: Identifiable {
     var title: String = ""
     var time: Date = Date()
-    var isOn: Bool = false
+    var isOn: Bool = true
+    var repeatDays: [Bool] = [Bool](repeating: false, count: 7)
     
     var id: Int = 0
 }
