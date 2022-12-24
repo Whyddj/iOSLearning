@@ -13,17 +13,32 @@ var formatter: DateFormatter = {
         return formatter
     }()
 
+let calendar = Calendar.current
+
 struct ContentView: View {
     
-    @ObservedObject var UserData: Clock = Clock()
+    @ObservedObject var UserData: Clock = Clock(data: initUserData())
     @State var showEditingPage = false
+    @State var isEditing = false
     
     var body: some View {
         NavigationView {
             ScrollView {
                 ForEach(self.UserData.ClockList) {item in
-                    SingleClockView(index: item.id)
-                        .environmentObject(self.UserData)
+                    if !item.isDeleted {
+                        HStack {
+                            if isEditing {
+                                Image(systemName: "trash")
+                                    .padding(.leading)
+                                    .foregroundColor(.red)
+                                    .onTapGesture {
+                                        self.UserData.ClockList[item.id].isDeleted = true
+                                    }
+                            }
+                            SingleClockView(index: item.id)
+                                .environmentObject(self.UserData)
+                        }
+                    }
                 }
             }
             .navigationTitle("闹钟")
@@ -41,9 +56,9 @@ struct ContentView: View {
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        
+                        self.isEditing.toggle()
                     }) {
-                        Text("编辑")
+                        Text(self.isEditing ? "确定" : "编辑")
                     }
                 }
             }
@@ -74,9 +89,16 @@ struct SingleClockView: View {
                             Text(self.UserData.ClockList[index].title)
                                 .font(.footnote)
                                 .foregroundColor(.black)
-                            ForEach(0..<7) { index in
-                                if self.UserData.ClockList[self.index].repeatDays[index] {
-                                    Text(dayName(for: index)).font(.footnote).foregroundColor(.black)
+                            if self.UserData.ClockList[self.index].repeatDays == [Bool](repeating: true, count: 7) {
+                                Text("每天").font(.footnote).foregroundColor(.black)
+                            }else if self.UserData.ClockList[self.index].repeatDays == [true, true, true, true, true, false, false] {
+                                Text("工作日").font(.footnote).foregroundColor(.black)
+                            }else {
+                                ForEach(0..<7) { index in
+                                    
+                                    if self.UserData.ClockList[self.index].repeatDays[index] {
+                                        Text(dayName(for: index)).font(.footnote).foregroundColor(.black)
+                                    }
                                 }
                             }
                             Spacer()
@@ -84,13 +106,16 @@ struct SingleClockView: View {
                     }
                 }
                 .sheet(isPresented: self.$showEditingPage, content: {
-                    EditingPage()
+                    EditingPage(selectedHour: getHour(time: self.UserData.ClockList[index].time), selectedMinute: getMinute(time: self.UserData.ClockList[index].time), name: self.UserData.ClockList[index].title, repeatDays: self.UserData.ClockList[index].repeatDays, id: self.index)
                         .environmentObject(self.UserData)
                 })
+            }.onTapGesture {
+                self.UserData.dataStore()
             }
             .padding(.horizontal)
             Rectangle()
                 .frame(height: 1)
+                .padding(.horizontal)
         }
     }
 }
@@ -108,8 +133,34 @@ func dayName(for index: Int) -> String {
     }
 }
 
+func getHour(time: Date) -> Int {
+    let components = calendar.dateComponents([.hour, .minute], from: time)
+    return components.hour!
+}
+
+func getMinute(time: Date) -> Int {
+    let components = calendar.dateComponents([.hour, .minute], from: time)
+    return components.minute!
+}
+
+func initUserData() -> [SingleClock] {
+    var output: [SingleClock] = []
+    if let dataStored = UserDefaults.standard.object(forKey: "ClockList") as? Data {
+        let data = try! decoder.decode([SingleClock].self, from: dataStored)
+        for item in data {
+            if !item.isDeleted {
+                output.append(SingleClock(title: item.title, time: item.time, isOn: item.isOn, repeatDays: item.repeatDays, id: output.count))
+            }
+        }
+    }
+    return output
+}
+
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            
     }
 }

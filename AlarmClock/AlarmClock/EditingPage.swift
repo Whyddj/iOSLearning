@@ -31,14 +31,14 @@ struct EditingPage: View {
                     HStack {
                         Picker(selection: $selectedHour, label: Text("Hour")) {
                             ForEach(0..<24) {
-                                Text("\(self.hours[$0])")
+                                Text(String(format: "%02d", self.hours[$0]))
                             }
                         }
                         .pickerStyle(WheelPickerStyle())
 
                         Picker(selection: $selectedMinute, label: Text("Minute")) {
                             ForEach(0..<60) {
-                                Text("\(self.minutes[$0])")
+                                Text(String(format: "%02d", self.minutes[$0]))
                             }
                         }
                         .pickerStyle(WheelPickerStyle())
@@ -67,7 +67,12 @@ struct EditingPage: View {
                 
                 Section {
                     Button(action: {
-                        
+                        if self.id == nil {
+                            self.presentation.wrappedValue.dismiss()
+                        } else {
+                            self.UserData.delete(index: self.id!)
+                            self.presentation.wrappedValue.dismiss()
+                        }
                     }){
                         Text("删除闹钟")
                             .foregroundColor(.red)
@@ -76,9 +81,14 @@ struct EditingPage: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
-                            self.UserData.add(data: SingleClock(title: self.name, time: formatter.date(from: String(format: "%02d", selectedHour) + ":" + String(format: "%02d", selectedMinute))!, repeatDays: self.repeatDays))
-                            
-                            self.presentation.wrappedValue.dismiss()
+                            if self.id == nil {
+                                self.UserData.add(data: SingleClock(title: self.name, time: formatter.date(from: String(format: "%02d", selectedHour) + ":" + String(format: "%02d", selectedMinute))!, repeatDays: self.repeatDays))
+                                
+                                self.presentation.wrappedValue.dismiss()
+                            } else {
+                                self.UserData.edit(id: self.id!, data: SingleClock(title: self.name, time: formatter.date(from: String(format: "%02d", selectedHour) + ":" + String(format: "%02d", selectedMinute))!, repeatDays: self.repeatDays))
+                                self.presentation.wrappedValue.dismiss()
+                            }
                         }) {
                             Text("存储")
                         }
