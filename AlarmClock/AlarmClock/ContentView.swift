@@ -15,6 +15,9 @@ var formatter: DateFormatter = {
 
 let calendar = Calendar.current
 
+
+
+
 struct ContentView: View {
     
     @ObservedObject var UserData: Clock = Clock(data: initUserData())
@@ -69,6 +72,14 @@ struct ContentView: View {
 struct SingleClockView: View {
     @EnvironmentObject var UserData: Clock
     var index: Int
+    @Environment(\.colorScheme) var colorScheme
+    var backgroundColor: Color {
+            if colorScheme == .dark {
+                return Color.white
+            } else {
+                return Color.black
+            }
+        }
     
     @State var showEditingPage = false
     
@@ -82,17 +93,18 @@ struct SingleClockView: View {
                         HStack {
                             Text(formatter.string(from: self.UserData.ClockList[index].time))
                                 .font(.largeTitle)
-                            .foregroundColor(.black)
+                                .foregroundColor(backgroundColor)
+                                
                             Spacer()
                         }
                         HStack{
                             Text(self.UserData.ClockList[index].title)
                                 .font(.footnote)
-                                .foregroundColor(.black)
+                                .foregroundColor(backgroundColor)
                             if self.UserData.ClockList[self.index].repeatDays == [Bool](repeating: true, count: 7) {
-                                Text("每天").font(.footnote).foregroundColor(.black)
+                                Text("每天").font(.footnote).foregroundColor(backgroundColor)
                             }else if self.UserData.ClockList[self.index].repeatDays == [true, true, true, true, true, false, false] {
-                                Text("工作日").font(.footnote).foregroundColor(.black)
+                                Text("工作日").font(.footnote).foregroundColor(backgroundColor)
                             }else {
                                 ForEach(0..<7) { index in
                                     
@@ -161,6 +173,6 @@ func initUserData() -> [SingleClock] {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            
+            .colorScheme(.dark)
     }
 }
