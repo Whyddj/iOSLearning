@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StudentManager{
+class StudentManager {
     var classID: String
     var name: String
     var number: Int

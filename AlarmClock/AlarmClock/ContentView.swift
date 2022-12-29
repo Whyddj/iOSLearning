@@ -49,6 +49,21 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         self.showEditingPage = true
+                        let center = UNUserNotificationCenter.current()
+                        center.getNotificationSettings { (settings) in
+                            if settings.authorizationStatus == .authorized {
+                                // The user has granted notification permission
+                            } else {
+                                // The user has not granted notification permission
+                                center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+                                    if granted {
+                                        // The user has granted notification permission
+                                    } else {
+                                        // The user has not granted notification permission
+                                    }
+                                }
+                            }
+                        }
                     }) {
                         Image(systemName: "plus")
                     }
@@ -121,8 +136,13 @@ struct SingleClockView: View {
                     EditingPage(selectedHour: getHour(time: self.UserData.ClockList[index].time), selectedMinute: getMinute(time: self.UserData.ClockList[index].time), name: self.UserData.ClockList[index].title, repeatDays: self.UserData.ClockList[index].repeatDays, id: self.index)
                         .environmentObject(self.UserData)
                 })
-            }.onTapGesture {
+            }.onChange(of: self.UserData.ClockList[index].isOn) { value in
                 self.UserData.dataStore()
+                if value {
+                    self.UserData.sendNotification(id: index)
+                } else {
+                    self.UserData.removeNotification(id: index)
+                }
             }
             .padding(.horizontal)
             Rectangle()
