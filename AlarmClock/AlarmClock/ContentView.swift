@@ -17,7 +17,6 @@ let calendar = Calendar.current
 
 
 
-
 struct ContentView: View {
     
     @ObservedObject var UserData: Clock = Clock(data: initUserData())
@@ -87,7 +86,9 @@ struct ContentView: View {
 struct SingleClockView: View {
     @EnvironmentObject var UserData: Clock
     var index: Int
+    
     @Environment(\.colorScheme) var colorScheme
+
     var backgroundColor: Color {
             if colorScheme == .dark {
                 return Color.white
@@ -95,6 +96,7 @@ struct SingleClockView: View {
                 return Color.black
             }
         }
+
     
     @State var showEditingPage = false
     

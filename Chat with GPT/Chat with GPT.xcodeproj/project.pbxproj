@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9642290D295FE96100ECE403 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9642290C295FE96100ECE403 /* Podfile */; };
+		9642290F296003F700ECE403 /* gptRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642290E296003F700ECE403 /* gptRequest.swift */; };
+		96757DCC295D959A0002C84A /* Chat_with_GPTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96757DCB295D959A0002C84A /* Chat_with_GPTApp.swift */; };
+		96757DCE295D959A0002C84A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96757DCD295D959A0002C84A /* ContentView.swift */; };
+		96757DD0295D959C0002C84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96757DCF295D959C0002C84A /* Assets.xcassets */; };
+		96757DD3295D959C0002C84A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96757DD2295D959C0002C84A /* Preview Assets.xcassets */; };
+		96757DDD295D959C0002C84A /* Chat_with_GPTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96757DDC295D959C0002C84A /* Chat_with_GPTTests.swift */; };
+		96757DE7295D959D0002C84A /* Chat_with_GPTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96757DE6295D959D0002C84A /* Chat_with_GPTUITests.swift */; };
+		96757DE9295D959D0002C84A /* Chat_with_GPTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96757DE8295D959D0002C84A /* Chat_with_GPTUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96757DD9295D959C0002C84A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96757DC0295D959A0002C84A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96757DC7295D959A0002C84A;
+			remoteInfo = "Chat with GPT";
+		};
+		96757DE3295D959D0002C84A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96757DC0295D959A0002C84A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96757DC7295D959A0002C84A;
+			remoteInfo = "Chat with GPT";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9642290C295FE96100ECE403 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		9642290E296003F700ECE403 /* gptRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gptRequest.swift; sourceTree = "<group>"; };
+		96757DC8295D959A0002C84A /* Chat with GPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chat with GPT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96757DCB295D959A0002C84A /* Chat_with_GPTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_with_GPTApp.swift; sourceTree = "<group>"; };
+		96757DCD295D959A0002C84A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		96757DCF295D959C0002C84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96757DD2295D959C0002C84A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96757DD8295D959C0002C84A /* Chat with GPTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chat with GPTTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96757DDC295D959C0002C84A /* Chat_with_GPTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_with_GPTTests.swift; sourceTree = "<group>"; };
+		96757DE2295D959D0002C84A /* Chat with GPTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chat with GPTUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96757DE6295D959D0002C84A /* Chat_with_GPTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_with_GPTUITests.swift; sourceTree = "<group>"; };
+		96757DE8295D959D0002C84A /* Chat_with_GPTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat_with_GPTUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96757DC5295D959A0002C84A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96757DD5295D959C0002C84A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96757DDF295D959D0002C84A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96757DBF295D959A0002C84A = {
+			isa = PBXGroup;
+			children = (
+				96757DCA295D959A0002C84A /* Chat with GPT */,
+				96757DDB295D959C0002C84A /* Chat with GPTTests */,
+				96757DE5295D959D0002C84A /* Chat with GPTUITests */,
+				96757DC9295D959A0002C84A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96757DC9295D959A0002C84A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96757DC8295D959A0002C84A /* Chat with GPT.app */,
+				96757DD8295D959C0002C84A /* Chat with GPTTests.xctest */,
+				96757DE2295D959D0002C84A /* Chat with GPTUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96757DCA295D959A0002C84A /* Chat with GPT */ = {
+			isa = PBXGroup;
+			children = (
+				96757DCB295D959A0002C84A /* Chat_with_GPTApp.swift */,
+				96757DCD295D959A0002C84A /* ContentView.swift */,
+				96757DCF295D959C0002C84A /* Assets.xcassets */,
+				96757DD1295D959C0002C84A /* Preview Content */,
+				9642290C295FE96100ECE403 /* Podfile */,
+				9642290E296003F700ECE403 /* gptRequest.swift */,
+			);
+			path = "Chat with GPT";
+			sourceTree = "<group>";
+		};
+		96757DD1295D959C0002C84A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				96757DD2295D959C0002C84A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		96757DDB295D959C0002C84A /* Chat with GPTTests */ = {
+			isa = PBXGroup;
+			children = (
+				96757DDC295D959C0002C84A /* Chat_with_GPTTests.swift */,
+			);
+			path = "Chat with GPTTests";
+			sourceTree = "<group>";
+		};
+		96757DE5295D959D0002C84A /* Chat with GPTUITests */ = {
+			isa = PBXGroup;
+			children = (
+				96757DE6295D959D0002C84A /* Chat_with_GPTUITests.swift */,
+				96757DE8295D959D0002C84A /* Chat_with_GPTUITestsLaunchTests.swift */,
+			);
+			path = "Chat with GPTUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96757DC7295D959A0002C84A /* Chat with GPT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96757DEC295D959D0002C84A /* Build configuration list for PBXNativeTarget "Chat with GPT" */;
+			buildPhases = (
+				96757DC4295D959A0002C84A /* Sources */,
+				96757DC5295D959A0002C84A /* Frameworks */,
+				96757DC6295D959A0002C84A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chat with GPT";
+			productName = "Chat with GPT";
+			productReference = 96757DC8295D959A0002C84A /* Chat with GPT.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96757DD7295D959C0002C84A /* Chat with GPTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96757DEF295D959D0002C84A /* Build configuration list for PBXNativeTarget "Chat with GPTTests" */;
+			buildPhases = (
+				96757DD4295D959C0002C84A /* Sources */,
+				96757DD5295D959C0002C84A /* Frameworks */,
+				96757DD6295D959C0002C84A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96757DDA295D959C0002C84A /* PBXTargetDependency */,
+			);
+			name = "Chat with GPTTests";
+			productName = "Chat with GPTTests";
+			productReference = 96757DD8295D959C0002C84A /* Chat with GPTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96757DE1295D959D0002C84A /* Chat with GPTUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96757DF2295D959D0002C84A /* Build configuration list for PBXNativeTarget "Chat with GPTUITests" */;
+			buildPhases = (
+				96757DDE295D959D0002C84A /* Sources */,
+				96757DDF295D959D0002C84A /* Frameworks */,
+				96757DE0295D959D0002C84A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96757DE4295D959D0002C84A /* PBXTargetDependency */,
+			);
+			name = "Chat with GPTUITests";
+			productName = "Chat with GPTUITests";
+			productReference = 96757DE2295D959D0002C84A /* Chat with GPTUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96757DC0295D959A0002C84A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					96757DC7295D959A0002C84A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					96757DD7295D959C0002C84A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 96757DC7295D959A0002C84A;
+					};
+					96757DE1295D959D0002C84A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 96757DC7295D959A0002C84A;
+					};
+				};
+			};
+			buildConfigurationList = 96757DC3295D959A0002C84A /* Build configuration list for PBXProject "Chat with GPT" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96757DBF295D959A0002C84A;
+			productRefGroup = 96757DC9295D959A0002C84A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96757DC7295D959A0002C84A /* Chat with GPT */,
+				96757DD7295D959C0002C84A /* Chat with GPTTests */,
+				96757DE1295D959D0002C84A /* Chat with GPTUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96757DC6295D959A0002C84A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9642290D295FE96100ECE403 /* Podfile in Resources */,
+				96757DD3295D959C0002C84A /* Preview Assets.xcassets in Resources */,
+				96757DD0295D959C0002C84A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96757DD6295D959C0002C84A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96757DE0295D959D0002C84A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96757DC4295D959A0002C84A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96757DCE295D959A0002C84A /* ContentView.swift in Sources */,
+				9642290F296003F700ECE403 /* gptRequest.swift in Sources */,
+				96757DCC295D959A0002C84A /* Chat_with_GPTApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96757DD4295D959C0002C84A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96757DDD295D959C0002C84A /* Chat_with_GPTTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96757DDE295D959D0002C84A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96757DE9295D959D0002C84A /* Chat_with_GPTUITestsLaunchTests.swift in Sources */,
+				96757DE7295D959D0002C84A /* Chat_with_GPTUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96757DDA295D959C0002C84A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96757DC7295D959A0002C84A /* Chat with GPT */;
+			targetProxy = 96757DD9295D959C0002C84A /* PBXContainerItemProxy */;
+		};
+		96757DE4295D959D0002C84A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96757DC7295D959A0002C84A /* Chat with GPT */;
+			targetProxy = 96757DE3295D959D0002C84A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		96757DEA295D959D0002C84A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		96757DEB295D959D0002C84A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96757DED295D959D0002C84A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Chat with GPT/Preview Content\"";
+				DEVELOPMENT_TEAM = X3MVQF72C8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.why.Chat-with-GPT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96757DEE295D959D0002C84A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Chat with GPT/Preview Content\"";
+				DEVELOPMENT_TEAM = X3MVQF72C8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.why.Chat-with-GPT";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		96757DF0295D959D0002C84A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3MVQF72C8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.why.Chat-with-GPTTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chat with GPT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Chat with GPT";
+			};
+			name = Debug;
+		};
+		96757DF1295D959D0002C84A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3MVQF72C8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.why.Chat-with-GPTTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chat with GPT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Chat with GPT";
+			};
+			name = Release;
+		};
+		96757DF3295D959D0002C84A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3MVQF72C8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.why.Chat-with-GPTUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Chat with GPT";
+			};
+			name = Debug;
+		};
+		96757DF4295D959D0002C84A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3MVQF72C8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.why.Chat-with-GPTUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Chat with GPT";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96757DC3295D959A0002C84A /* Build configuration list for PBXProject "Chat with GPT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96757DEA295D959D0002C84A /* Debug */,
+				96757DEB295D959D0002C84A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96757DEC295D959D0002C84A /* Build configuration list for PBXNativeTarget "Chat with GPT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96757DED295D959D0002C84A /* Debug */,
+				96757DEE295D959D0002C84A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96757DEF295D959D0002C84A /* Build configuration list for PBXNativeTarget "Chat with GPTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96757DF0295D959D0002C84A /* Debug */,
+				96757DF1295D959D0002C84A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96757DF2295D959D0002C84A /* Build configuration list for PBXNativeTarget "Chat with GPTUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96757DF3295D959D0002C84A /* Debug */,
+				96757DF4295D959D0002C84A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96757DC0295D959A0002C84A /* Project object */;
+}

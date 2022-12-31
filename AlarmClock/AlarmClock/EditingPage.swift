@@ -110,29 +110,37 @@ struct EditingPage: View {
 struct RepeatDaysView: View {
     @Binding var repeatDays: [Bool]
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
+
+    var backgroundColor: Color {
+            if colorScheme == .dark {
+                return Color.white
+            } else {
+                return Color.black
+            }
+        }
+
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(0..<7) { index in
-                    Button(action: {
-                        self.repeatDays[index].toggle()
-                    }) {
-                        HStack {
-                            Text(dayName(for: index))
-                            Spacer()
-                            if self.repeatDays[index] {
-                                Image(systemName: "checkmark")
-                            }
+        List {
+            ForEach(0..<7) { index in
+                Button(action: {
+                    self.repeatDays[index].toggle()
+                }) {
+                    HStack {
+                        Text(dayName(for: index)).foregroundColor(backgroundColor)
+                        Spacer()
+                        if self.repeatDays[index] {
+                            Image(systemName: "checkmark")
                         }
                     }
                 }
             }
-            .navigationBarTitle("重复")
-            .navigationBarItems(trailing: Button("完成") {
-                            self.presentationMode.wrappedValue.dismiss()
-                        })
         }
+        .navigationBarTitle("重复")
+        .navigationBarItems(trailing: Button("完成") {
+                        self.presentationMode.wrappedValue.dismiss()
+                    })
     }
 }
 
